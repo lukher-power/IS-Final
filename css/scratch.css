@@ -1,0 +1,11 @@
+/* Scratch page styles created from scratch */
+body{margin:0;font-family: 'Georgia', serif;background: linear-gradient(#f7f9fb,#e6f0f8);color:#222}
+.top{padding:20px;background:#083d77;color:#fff}
+.intro{padding:16px}
+.content{display:flex;flex-direction:column;gap:18px;padding:16px}
+.box{background:rgba(255,255,255,0.85);padding:14px;border-radius:8px}
+.photo{max-width:100%;height:auto;border-radius:6px}
+.videoWrapper iframe{width:100%;max-width:560px}
+.tableauContainer iframe{width:100%;max-width:900px}
+.foot{padding:12px;text-align:center;color:#083d77}
+/* font color and family explicitly specified above */

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Number Guessing Game</title>
+    <style>
+      body{font-family: Arial, Helvetica, sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;background:#f0f4f8;margin:0}
+      .card{background:white;padding:2rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.12);width:320px;text-align:center}
+      input{width:60px;padding:6px;font-size:1rem}
+      button{padding:6px 12px;margin-left:8px}
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Guess the Number</h2>
+      <p>I'm thinking of a number between 1 and 100.</p>
+      <div>
+        <input id="guess" type="number" min="1" max="100">
+        <button id="check">Check</button>
+      </div>
+      <p id="feedback"></p>
+      <p>Attempts: <span id="count">0</span></p>
+      <button id="new">New Game</button>
+    </div>
+
+    <script>
+      let secret, attempts;
+      function newGame(){secret=Math.floor(Math.random()*100)+1;attempts=0;document.getElementById('feedback').textContent='Good luck!';document.getElementById('count').textContent='0';document.getElementById('guess').value='';}
+      document.getElementById('check').addEventListener('click',()=>{const g=Number(document.getElementById('guess').value);if(!g){alert('Enter a number');return;}attempts++;document.getElementById('count').textContent=attempts;if(g===secret){document.getElementById('feedback').textContent=`Correct! The number was ${secret}.`; }else if(g<secret){document.getElementById('feedback').textContent='Too low.';}else{document.getElementById('feedback').textContent='Too high.';}});
+      document.getElementById('new').addEventListener('click',newGame);
+      newGame();
+    </script>
+  </body>
+</html>
